@@ -3,9 +3,6 @@
 """
 Entry-point that wires the Stage-1 pipeline:
 Reader -> Detector(s) -> Embedder(s) -> RedisWriter
-
-Logic replicated from the monolithic o5p_3stage_debug.py,
-but split into modules and with identical behavior.
 """
 
 import os
