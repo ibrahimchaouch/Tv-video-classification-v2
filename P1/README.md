@@ -1,8 +1,8 @@
 # facepipe — Stage‑1 Face Frequency & Embedding Pipeline
 
-*A modular, reproducible implementation of the first stage in our PhD video‑understanding pipeline.*
+*A modular, reproducible implementation of the first stage (Face Appearance Frequency Analysis)*
 
-> **Scope**: This repository implements **Stage‑1** only — extracting **per‑identity appearance frequency** and a **512‑D face embedding** bank from a TV video. Stages 2–3 (name assignment and web biography retrieval + final genre classification) are out of scope here and discussed in the paper. “**Why frequency matters**” and the complete pipeline motivation are in the article; this repo focuses on the engineering details that make Stage‑1 precise and fast.
+> **Scope**: This repository implements **Stage‑1** only — extracting **per‑identity appearance frequency** and a **512‑D face embedding** bank from a TV video. Stages 2–3 (name assignment and web biography retrieval + final genre classification) are out of scope here and discussed in P2 & P3” and the complete pipeline motivation are in the paper; this repo focuses on the engineering details that make Stage‑1 precise and fast.
 
 ---
 
