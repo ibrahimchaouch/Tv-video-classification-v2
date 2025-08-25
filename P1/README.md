@@ -49,8 +49,12 @@ Each Redis record stores at least `{embedding, centroid, refine_count, count}`. 
 
 Centroid update (bounded by `--refine-limit`) uses a running mean **then re‑normalizes**:
 
+
 $$
-\mathbf{c}_{t+1} = \mathrm{norm}\!\left(\frac{r_t\,\mathbf{c}_t + \tilde{\mathbf{f}}}{r_t+1}\right),\quad r_{t+1}=\min(r_t+1,\texttt{refine\_limit}).
+\mathbf{c}_{t+1}
+= \mathrm{norm}\!\left(\frac{r_t\,\mathbf{c}_t + \tilde{\mathbf{f}}}{r_t + 1}\right),
+\qquad
+r_{t+1} = \min\!\bigl(r_t + 1,\, \text{\texttt{refine\_limit}}\bigr).
 $$
 
 Frequency is tracked via `count ← count + 1` at each merge. This field is central to downstream stages.
