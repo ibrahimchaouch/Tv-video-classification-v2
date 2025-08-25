@@ -43,7 +43,7 @@ $$
 \tilde{\mathbf{f}} = \frac{\mathbf{f}}{\lVert\mathbf{f}\rVert_2 + \varepsilon}\,,\qquad \tilde{\mathbf{f}}\in\mathbb{R}^{512},\; \lVert\tilde{\mathbf{f}}\rVert_2=1.
 $$
 
-### 5) Identity Matching with Online Centroid
+### 5) Identity Matching with Online Centroi
 
 Each Redis record stores at least `{embedding, centroid, refine_count, count}`. Given a new normalized feature $\tilde{\mathbf{f}}$, we search for the best key by cosine similarity $s = \tilde{\mathbf{c}}^\top\tilde{\mathbf{f}}$. If $s \ge \tau$ we **merge** into that identity; else we **create** a new one.
 
