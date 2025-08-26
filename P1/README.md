@@ -43,13 +43,14 @@ $$
 \tilde{\mathbf{f}} = \frac{\mathbf{f}}{\lVert\mathbf{f}\rVert_2 + \varepsilon}\,,\qquad \tilde{\mathbf{f}}\in\mathbb{R}^{512},\; \lVert\tilde{\mathbf{f}}\rVert_2=1.
 $$
 
-### 5) Identity Matching with Online Centroi
+### 5) Identity Matching with Online Centroid
 
 Each Redis record stores at least `{embedding, centroid, refine_count, count}`. Given a new normalized feature $\tilde{\mathbf{f}}$, we search for the best key by cosine similarity $s = \tilde{\mathbf{c}}^\top\tilde{\mathbf{f}}$. If $s \ge \tau$ we **merge** into that identity; else we **create** a new one.
 
 Centroid update (bounded by `--refine-limit`) uses a running mean **then re‑normalizes**:
+
 $$
-\mathbf{c}_{t+1}=\operatorname{norm}\!\left(\frac{r_t\,\mathbf{c}_t+\tilde{\mathbf{f}}}{r_t+1}\right),\qquad r_{t+1}=\min\!\bigl(r_t+1,\mathtt{refine\_limit}\bigr).
+\mathbf{c}_{t+1}=\operatorname{norm}\!\left(\frac{r_t\,\mathbf{c}_t+\tilde{\mathbf{f}}}{r_t+1}\right),\qquadr_{t+1}=\min\!\bigl(r_t+1,\mathtt{refine\_limit}\bigr).
 $$
 
 Frequency is tracked via `count ← count + 1` at each merge. This field is central to downstream stages.
