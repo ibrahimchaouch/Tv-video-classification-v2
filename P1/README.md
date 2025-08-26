@@ -16,7 +16,7 @@
 
 ---
 
-## 🧠 Method Summary
+## �  Method Summary
 
 ### 1) Pre‑filter (Frame Quality)
 
